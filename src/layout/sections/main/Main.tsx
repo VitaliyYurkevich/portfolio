@@ -35,10 +35,10 @@ const StyledMain = styled.section`
 `
 
 const PhotoWrapper = styled.div`
-position: relative;
+  position: relative;
   z-index: 0;
   margin-top: 15px;
-  
+
   @media ${theme.media.mobile} {
     width: 290px;
     height: 360px;
@@ -51,19 +51,22 @@ const Photo = styled.img`
   width: 350px;
   height: 430px;
   object-fit: cover;
-  
-  
+
+
   @media ${theme.media.mobile} {
     width: 310px;
     height: 380px;
+    padding-top: 10px;
   }
   //background-color: darkblue;
 `
 
 
 const MainTitle = styled.h1`
-  ${font({weight: 700, Fmax: 38, Fmin: 30})}
-  //background-color: darkblue;
+  ${font({weight: 700, Fmax: 38, Fmin: 30})} //background-color: darkblue;
+  @media ${theme.media.mobile} {
+    text-align: center;
+  }
 `
 
 const SmallText = styled.h2`
@@ -71,6 +74,10 @@ const SmallText = styled.h2`
   font-size: 38px;
   font-weight: 700;
   letter-spacing: -1px;
+  @media ${theme.media.mobile} {
+    padding-left: 30px;
+  }
+  
 `
 
 const Name = styled.h2`
@@ -78,17 +85,21 @@ const Name = styled.h2`
   letter-spacing: -1px;
   margin: 10px 0;
 
+  @media ${theme.media.mobile} {
+    text-align: center;
+  }
+  
   span {
-white-space: nowrap;
+    white-space: nowrap;
     @media ${theme.media.mobile} {
       white-space: unset;
 
     }
   }
-  
+
   @media ${theme.media.mobile} {
     margin: 15px 0 22px;
-    
+
   }
   font-size: 38px;
   font-weight: 700;

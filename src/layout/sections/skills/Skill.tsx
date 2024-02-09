@@ -29,7 +29,7 @@ const StyledSkill = styled.div`
  // width: 20%;
   text-align: center;
  // background-color: lawngreen;
-  padding: 40px;
+  padding: 20px;
   flex-grow: 3;
   
   
