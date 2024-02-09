@@ -86,7 +86,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   width: 200px;
   height: 200px;
   z-index: 9999999;
-  margin-right: 80px;
+  //margin-right: 80px;
   
   span {
     display: block;

@@ -28,10 +28,9 @@ const StyledHeaderIcons = styled.div`
   @media ${theme.media.mobile} {
     display: flex;
     position: running(center);
-    padding-left: 0%;
    // background-color: green;
-    padding-right: 40%;
-    
+    padding-right: 33%;
+    padding-left: 5%;
   }
 
   display: flex;

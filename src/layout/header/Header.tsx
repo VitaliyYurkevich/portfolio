@@ -18,8 +18,8 @@ export const Header = () => {
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
                     <HeaderMenu item={items}/>
-                        <MobileMenu item={items}/>
-                        <HeaderIcons/>
+                    <MobileMenu item={items}/>
+                    <HeaderIcons/>
                 </FlexWrapper>
             </MyContainer>
         </StyledHeader>
