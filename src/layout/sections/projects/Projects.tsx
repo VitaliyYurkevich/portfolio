@@ -16,7 +16,7 @@ export const Projects = () => {
             <MyContainer>
                 <SectionsTitle>My Works</SectionsTitle>
                 <TabMenu item={items}/>
-                <FlexWrapper justify={'space-between'}>
+                <FlexWrapper justify={'space-around'} align={'flex-start'} wrap={'wrap'}>
                     <Project src={socialImg} text={text} title={'Social Network'} TechStock={'HTML , JavaScript, React'} />
                     <Project src={timerImg} text={text} title={'timer'}/>
                     <Project src={timerImg} text={text} title={'timer'}/>
@@ -32,5 +32,8 @@ const text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do e
 const StyledWorks = styled.section`
   min-height: 100vh;
   background-color: darkblue;
+  ${FlexWrapper} {
+    gap: 30px;
+  }
   
 `

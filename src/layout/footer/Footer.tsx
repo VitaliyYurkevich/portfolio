@@ -2,6 +2,7 @@ import {FlexWrapper} from "../../components/FlexWrapper";
 import {Icon} from "../../components/icon/Icon";
 import styled from "styled-components";
 import {theme} from "../../styles/Theme";
+import {font} from "../../styles/Common";
 
 export const Footer = () => {
     return (
@@ -42,10 +43,7 @@ const StyledFooter = styled.section`
 
 `
 const Name = styled.span`
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 3px;
+  ${font({family: 'Josefin Sans', weight: 700, Fmax: 22, Fmin: 16})}
 `
 
 const SocialList = styled.ul`

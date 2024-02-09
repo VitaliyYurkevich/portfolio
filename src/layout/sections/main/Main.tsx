@@ -11,13 +11,16 @@ export const Main = () => {
     return (
         <StyledMain>
             <MyContainer>
-                <FlexWrapper align={'center'} justify={'space-between'} wrap={'wrap'}>
+                <FlexWrapper align={'center'} justify={'space-around'} wrap={'wrap'}>
                     <div>
                         <SmallText>Hi 👋,</SmallText>
                         <Name><span>My name is Vitaliy Yurkevich</span></Name>
                         <MainTitle>A Web Developer.</MainTitle>
                     </div>
-                    <Photo src={photo} alt=''/>
+                    <PhotoWrapper>
+                        <Photo src={photo} alt=''/>
+                    </PhotoWrapper>
+
                 </FlexWrapper>
             </MyContainer>
         </StyledMain>
@@ -31,11 +34,25 @@ const StyledMain = styled.section`
   background-color: antiquewhite;
 `
 
+const PhotoWrapper = styled.div`
+position: relative;
+  z-index: 0;
+  margin-top: 15px;
+  
+  @media ${theme.media.mobile} {
+    width: 290px;
+    height: 360px;
+    top: -17px;
+    left: -20px
+  }
+`
 
 const Photo = styled.img`
   width: 350px;
   height: 430px;
   object-fit: cover;
+  
+  
   @media ${theme.media.mobile} {
     width: 310px;
     height: 380px;
@@ -45,19 +62,19 @@ const Photo = styled.img`
 
 
 const MainTitle = styled.h1`
-  ${font({weight: 700, Fmax: 38, fMin: 30})}
+  ${font({weight: 700, Fmax: 38, Fmin: 30})}
   //background-color: darkblue;
 `
 
 const SmallText = styled.h2`
-  ${font({weight: 700, Fmax: 38, fMin: 30})}
+  ${font({weight: 700, Fmax: 38, Fmin: 30})}
   font-size: 38px;
   font-weight: 700;
   letter-spacing: -1px;
 `
 
 const Name = styled.h2`
-  ${font({weight: 700, Fmax: 38, fMin: 30})}
+  ${font({weight: 700, Fmax: 38, Fmin: 30})}
   letter-spacing: -1px;
   margin: 10px 0;
 
