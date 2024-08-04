@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Icon} from "../../../components/icon/Icon";
+import {IconSvg} from "../../../components/icon/Icon";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 
 
@@ -16,7 +16,7 @@ export const HeaderIcon = (props: SkillPropsType) => {
     return (
         <StyledHeaderIcon>
             <FlexWrapper direction={'column'} align={'center'}>
-                <Icon iconId={props.iconId} viewBox={props.viewBox} width={props.width} height={props.height}/>
+                <IconSvg iconId={props.iconId} viewBox={props.viewBox} width={props.width} height={props.height}/>
             </FlexWrapper>
         </StyledHeaderIcon>
     );

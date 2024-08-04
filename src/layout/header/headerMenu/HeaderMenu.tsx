@@ -1,27 +1,38 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
+
+type ArrayMenuPropsType = {
+    title: string
+    href: string
+}
 
 type MenuPropsType = {
-    item: Array<string>
+    item: Array<ArrayMenuPropsType>
 }
 
 export const HeaderMenu = (props: MenuPropsType) => {
+
     return (
         <StyledHeaderMenu>
             <ul>
                 {props.item.map((item, index) => {
                     return (
                         <ListItem key={index}>
-                            <Link href=''>
-                                {item}
+                            <NavLink to={item.href}
+                                     spy={true}
+                                     smooth={true}
+                                     activeClass="active"
+                                >
+                                {item.title}
                                 <Mask>
-                                    <span>{item}</span>
+                                    <span>{item.title}</span>
                                 </Mask>
                                 <Mask>
-                                    <span>{item}</span>
+                                    <span>{item.title}</span>
                                 </Mask>
-                            </Link>
+                            </NavLink>
                         </ListItem>
                     )
                 })}
@@ -43,16 +54,6 @@ export const StyledHeaderMenu = styled.nav`
   }
 `
 
-
-const Link = styled.a`
-  //color: var(--text, #BDEBEA);
-  font-family: Poppins, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  color: transparent;
-`
-
 const Mask = styled.span`
   position: absolute;
   top: 0;
@@ -61,7 +62,8 @@ const Mask = styled.span`
   height: 50%;
   overflow-y: hidden;
   color: ${theme.colors.white};
-
+  transition: ${theme.animation.transition} ;
+  
   & + & {
     top: 50%;
 
@@ -72,30 +74,36 @@ const Mask = styled.span`
   }
 `
 
-const ListItem = styled.li`
-  position: relative;
+const NavLink = styled(Link)`
+  //color: var(--text, #BDEBEA);
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  color: transparent;
 
   &::before {
     content: '';
     display: inline-block;
     height: 2px;
     background-color: ${theme.colors.accent};
-    
+
     position: absolute;
     top: 50%;
     left: -8px;
     right: -8px;
     z-index: 1;
-    
+
     transform: scale(0);
+    transition: ${theme.animation.transition} ;
   }
 
-  &:hover {
+  &:hover, &.active {
     &::before {
       transform: scale(1);
     }
-    
-    
+
+
     ${Mask} {
       transform: skewX(12deg) translateX(5px);
       color: ${theme.colors.grey};
@@ -105,4 +113,11 @@ const ListItem = styled.li`
       }
     }
   }
+`
+
+
+
+
+const ListItem = styled.li`
+  position: relative;
 `

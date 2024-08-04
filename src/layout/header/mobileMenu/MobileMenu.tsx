@@ -1,9 +1,15 @@
 import React, {useMemo, useState} from 'react';
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
+
+type ArrayMenuPropsType = {
+    title: string
+    href: string
+}
 
 type MenuPropsType = {
-    item: Array<string>
+    item: Array<ArrayMenuPropsType>
 }
 
 export const MobileMenu = (props: MenuPropsType) => {
@@ -17,24 +23,28 @@ export const MobileMenu = (props: MenuPropsType) => {
     return (
         <StyledMobileMenu>
 
-            <BurgerButton onClick={HandlerIsOpen} isOpen={false}>
+            <BurgerButton onClick={HandlerIsOpen} isOpen={Open}   >
                 <span></span>
             </BurgerButton>
 
-            <MobileMenuPopup isOpen={false}>
+            <MobileMenuPopup isOpen={Open} onClick={()=> setOpen(false)}>
                 <ul>
                     {props.item.map((item, index) => {
                         return (
                             <ListItem key={index}>
-                                <Link href=''>
-                                    {item}
+                                <NavLink to={item.href}
+                                         spy={true}
+                                         smooth={true}
+                                         activeClass="active"
+                                >
+                                    {item.title}
                                     <Mask>
-                                        <span>{item}</span>
+                                        <span>{item.title}</span>
                                     </Mask>
                                     <Mask>
-                                        <span>{item}</span>
+                                        <span>{item.title}</span>
                                     </Mask>
-                                </Link>
+                                </NavLink>
                             </ListItem>
                         )
                     })}
@@ -62,21 +72,31 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   bottom: 0;
   z-index: 99999;
   background-color: rgba(31, 31, 32, 0.9);
-  display: none;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 1s ease-in-out;
 
-  ${props => props.isOpen && css<{ isOpen: boolean }>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  `}
+  
+  
   ul {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: .5s ease-in-out;
   }
+
+  ${props => props.isOpen && css<{ isOpen: boolean }>`
+    transform: translateY(0);
+    ul{
+      gap: 60px;
+      transition: 2s ease-in-out;
+    }
+  `}
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
@@ -111,7 +131,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       transform: translateY(-10px);
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
-        transform: rotate(-45deg) translateY(0px);
+        transform: rotate(-45deg) translateY(0);
     `}
       
     }
@@ -126,23 +146,13 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       transform: translateY(10px);
       
       ${props => props.isOpen && css<{ isOpen: boolean }>`
-        transform: rotate(45deg) translateY(0px);
+        transform: rotate(45deg) translateY(0);
         width: 36px;
     `}
     }
 
   }
 
-`
-
-
-const Link = styled.a`
-  //color: var(--text, #BDEBEA);
-  font-family: Poppins, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  color: transparent;
 `
 
 const Mask = styled.span`
@@ -153,6 +163,7 @@ const Mask = styled.span`
   height: 50%;
   overflow-y: hidden;
   color: ${theme.colors.white};
+  transition: ${theme.animation.transition} ;
 
   & + & {
     top: 50%;
@@ -164,8 +175,13 @@ const Mask = styled.span`
   }
 `
 
-const ListItem = styled.li`
-  position: relative;
+const NavLink = styled(Link)`
+  //color: var(--text, #BDEBEA);
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  color: transparent;
 
   &::before {
     content: '';
@@ -180,14 +196,14 @@ const ListItem = styled.li`
     z-index: 1;
 
     transform: scale(0);
+    transition: ${theme.animation.transition} ;
   }
 
-  &:hover {
+  &:hover, &.active {
     &::before {
       transform: scale(1);
     }
-
-
+    
     ${Mask} {
       transform: skewX(12deg) translateX(5px);
       color: ${theme.colors.grey};
@@ -197,4 +213,11 @@ const ListItem = styled.li`
       }
     }
   }
+
+`
+
+
+const ListItem = styled.li`
+  position: relative;
+  
 `

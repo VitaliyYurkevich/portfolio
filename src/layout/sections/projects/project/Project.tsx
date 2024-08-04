@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Icon} from "../../../../components/icon/Icon";
+import {IconSvg} from "../../../../components/icon/Icon";
 import {theme} from "../../../../styles/Theme";
 import {Button} from "../../../../components/Button";
 import {Link} from "../../../../components/Link";
@@ -25,8 +25,8 @@ export const Project = (props: WorkPropsType) => {
                 <Title>{props.title}</Title>
                 <Text>{props.text}</Text>
                 <TechStock>Tech Stock: {props.TechStock}</TechStock>
-                <Icon iconId={'github'} width={'20px'} height={'20px'} viewBox={'0 0 100 100'}/>
-                <Link href="#">View Code </Link>
+                <IconSvg iconId={'github'} width={'20px'} height={'20px'} viewBox={'0 0 100 100'}/>
+                <Link  href="#">View Code </Link>
             </Description>
 
         </StyledWork>
@@ -64,8 +64,8 @@ const ImageWrapper = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-
+    transform: translate(-50%, -35%);
+    transition: ${theme.animation.transition};
     &::before {
       width: 100%;
       height: 100%;
@@ -81,8 +81,9 @@ const ImageWrapper = styled.div`
     top: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.30);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
     opacity: 0;
+    transition: ${theme.animation.transition};
   }
   
   &:hover {
@@ -92,6 +93,7 @@ const ImageWrapper = styled.div`
     ${Button} {
       opacity: 1;
       border-radius: 83px;
+      transform: translate(-50%, -50%);
     }
   }
   

@@ -7,7 +7,7 @@ import {theme} from "../../../styles/Theme";
 
 export const Contact = () => {
     return (
-        <StyledContacts>
+        <StyledContacts id={'contact'}>
             <MyContainer>
                 <SectionsTitle>Contact</SectionsTitle>
                 <StyledForm>
@@ -20,7 +20,6 @@ export const Contact = () => {
                         <Field  placeholder={'message'} as={'textarea'}/>
                     </FieldWrapper>
                         <Button type={'submit'}>Send message</Button>
-
                 </StyledForm>
             </MyContainer>
         </StyledContacts>
@@ -29,7 +28,8 @@ export const Contact = () => {
 
 
 const StyledContacts = styled.section`
-
+position: relative;
+ 
 `
 
 const StyledForm = styled.form`

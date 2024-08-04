@@ -1,8 +1,9 @@
 import {FlexWrapper} from "../../components/FlexWrapper";
-import {Icon} from "../../components/icon/Icon";
+import {IconSvg} from "../../components/icon/Icon";
 import styled from "styled-components";
 import {theme} from "../../styles/Theme";
 import {font} from "../../styles/Common";
+import {GoTopBtn} from "../../components/goTopBtn/goTopBtn";
 
 export const Footer = () => {
     return (
@@ -12,22 +13,22 @@ export const Footer = () => {
                 <SocialList>
                     <SocialItem>
                         <SocialIconLink>
-                            <Icon height={'17px'} width={'17px'} viewBox={'0 0 17px 17px'} iconId={'instagram'}/>
+                            <IconSvg height={'17px'} width={'17px'} viewBox={'0 0 17px 17px'} iconId={'instagram'}/>
                         </SocialIconLink>
                     </SocialItem>
                     <SocialItem>
                         <SocialIconLink>
-                            <Icon  height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'telegram'}/>
+                            <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'telegram'}/>
                         </SocialIconLink>
                     </SocialItem>
                     <SocialItem>
                         <SocialIconLink>
-                            <Icon height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'vk'}/>
+                            <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'vk'}/>
                         </SocialIconLink>
                     </SocialItem>
                     <SocialItem>
                         <SocialIconLink>
-                            <Icon height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'linkedin'}/>
+                            <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'linkedin'}/>
                         </SocialIconLink>
                     </SocialItem>
                 </SocialList>
@@ -38,6 +39,7 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.section`
+  position: relative;
   background-color: darkgreen;
   padding: 40px 0;
 
@@ -61,7 +63,7 @@ const SocialIconLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  transition: ${theme.animation.transition};
   
   color: ${theme.colors.accent};
   
@@ -81,5 +83,5 @@ const Copyright = styled.small`
 `
 
 const SocialItem = styled.li`
-
+  
 `

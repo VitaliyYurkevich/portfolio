@@ -8,9 +8,21 @@ import {HeaderIcons} from "./headerIcons/HeaderIcons";
 import {MobileMenu} from "./mobileMenu/MobileMenu";
 import {theme} from "../../styles/Theme";
 
-
 export const Header = () => {
-    let items = ['Home', 'Skills', 'Projects', 'Contact']
+    let items = [
+        {
+            title: 'Home', href: 'home'
+        },
+        {
+            title: 'Skills', href: 'skills'
+        },
+        {
+            title: 'Projects', href: 'projects'
+        },
+        {
+            title: 'Contact', href: 'contact'
+        },
+    ]
 
     return (
         <StyledHeader>

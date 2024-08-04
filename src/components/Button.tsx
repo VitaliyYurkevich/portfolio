@@ -11,10 +11,8 @@ export const Button = styled.button`
   position: relative;
   z-index: 0;
   border-radius: 83px;
-  //border-radius: 83px;
   
   &:hover {
-   // padding: 0px 0px 0px 0px;
     &::before {
       width: 100%;
       height: 100%;
@@ -29,7 +27,7 @@ export const Button = styled.button`
     height: 10px;
     background-color: ${theme.colors.accent};
     background-image: linear-gradient(270deg, #13ADC7 0%, #6978D1 66.67%, #945DD6 100%);
-    
+    transition: ${theme.animation.transition};
     position: absolute;
     bottom: 0;
     left: 50%;
