@@ -26,6 +26,6 @@ export const HeaderIcon = (props: SkillPropsType) => {
 const StyledHeaderIcon = styled.div`
  // background: blueviolet;
   display: flex;
-  margin-left: 25px;
+  //margin-left: 25px;
  //margin-top: 35px;
 `

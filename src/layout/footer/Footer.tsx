@@ -4,33 +4,35 @@ import styled from "styled-components";
 import {theme} from "../../styles/Theme";
 import {font} from "../../styles/Common";
 import {GoTopBtn} from "../../components/goTopBtn/goTopBtn";
+import {Fade} from "react-awesome-reveal";
 
 export const Footer = () => {
+
+    const iconArray = [
+        {height: '17px', width: '17px', viewBox: '0 0 17px 17px', iconId: 'instagram'},
+        {height: '21px', width: '21px', viewBox: '0 0 21px 21px', iconId: 'telegram'},
+        {height: '21px', width: '21px', viewBox: '0 0 21px 21px', iconId: 'vk'},
+        {height: '21px', width: '21px', viewBox: '0 0 21px 21px', iconId: 'linkedin'},
+    ]
+
     return (
         <StyledFooter>
             <FlexWrapper direction={'column'} align={'center'}>
-                <Name>Vitaliy</Name>
+                <Fade direction={"up"} damping={.1}>
+                    <Name>Vitaliy</Name>
+                </Fade>
                 <SocialList>
-                    <SocialItem>
-                        <SocialIconLink>
-                            <IconSvg height={'17px'} width={'17px'} viewBox={'0 0 17px 17px'} iconId={'instagram'}/>
-                        </SocialIconLink>
-                    </SocialItem>
-                    <SocialItem>
-                        <SocialIconLink>
-                            <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'telegram'}/>
-                        </SocialIconLink>
-                    </SocialItem>
-                    <SocialItem>
-                        <SocialIconLink>
-                            <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'vk'}/>
-                        </SocialIconLink>
-                    </SocialItem>
-                    <SocialItem>
-                        <SocialIconLink>
-                            <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'linkedin'}/>
-                        </SocialIconLink>
-                    </SocialItem>
+                    <Fade direction={"up"} cascade={true} damping={.1}>
+                    {iconArray.map((i) => {
+                        return (
+                            <SocialItem>
+                                <SocialIconLink>
+                                    <IconSvg height={i.height} width={i.width} viewBox={i.viewBox} iconId={i.iconId}/>
+                                </SocialIconLink>
+                            </SocialItem>
+                        )
+                    })}
+                    </Fade>
                 </SocialList>
                 <Copyright>© 2023 Vitaliy Yurkevich, All Rights Reserved.</Copyright>
             </FlexWrapper>
@@ -59,19 +61,19 @@ const SocialIconLink = styled.a`
   background: rgba(255, 255, 255, 0.1);
   width: 35px;
   height: 35px;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   transition: ${theme.animation.transition};
-  
+
   color: ${theme.colors.accent};
-  
-  
+
+
   &:hover {
     color: ${theme.colors.primaryBg};
     transform: translateY(-4px);
-    
+
   }
 `
 
@@ -83,5 +85,5 @@ const Copyright = styled.small`
 `
 
 const SocialItem = styled.li`
-  
+
 `

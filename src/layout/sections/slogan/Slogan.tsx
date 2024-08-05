@@ -4,6 +4,7 @@ import {SectionsTitle} from "../../../components/SectionsTitle";
 import {Button} from "../../../components/Button";
 import {MyContainer} from "../../../components/MyContainer";
 import {FlexWrapper} from "../../../components/FlexWrapper";
+import {Fade} from "react-awesome-reveal";
 
 export const Slogan = () => {
     return (
@@ -11,7 +12,9 @@ export const Slogan = () => {
             <MyContainer>
                 <FlexWrapper direction={'column'} align={'center'}>
                     <SectionsTitle>I Am Available For Freelance</SectionsTitle>
+                    <Fade direction={"right"} damping={.1}>
                     <Button>Hire me</Button>
+                    </Fade>
                 </FlexWrapper>
             </MyContainer>
         </StyledSlogan>

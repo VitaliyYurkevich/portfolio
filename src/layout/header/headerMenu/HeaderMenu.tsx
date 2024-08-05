@@ -45,8 +45,16 @@ export const HeaderMenu = (props: MenuPropsType) => {
 export const StyledHeaderMenu = styled.nav`
   ul {
     display: flex;
-    gap: 30px;
+    gap: 80px;
     justify-content: center;
+  }
+  
+  @media ${theme.media.tablet} {
+    
+   ul{
+     gap: 30px;
+   }
+    
   }
   
   @media ${theme.media.mobile} {

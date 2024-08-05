@@ -7,11 +7,13 @@ import {Project} from "./project/Project";
 import socialImg from './../../../assets/images/proj-1.png'
 import timerImg from './../../../assets/images/proj-2.png'
 import {MyContainer} from "../../../components/MyContainer";
+import {Fade} from "react-awesome-reveal";
+import {AnimatePresence, motion} from "framer-motion";
 
 export type TabsItemsType = 'all' | 'landing' | 'react' | 'spa'
 
 
-const tabsItems: Array<{ status: TabsItemsType , title: string}> = [
+const tabsItems: Array<{ status: TabsItemsType, title: string }> = [
     {
         title: 'All',
         status: 'all'
@@ -37,19 +39,22 @@ const worksData = [
         title: 'Social Network',
         src: socialImg,
         text: text,
-        type: 'spa'
+        type: 'spa',
+        id: 1
     },
     {
         title: 'Social Network',
         src: timerImg,
         text: text,
-        type: 'react'
+        type: 'react',
+        id: 2
     },
     {
         title: 'Social Network',
         src: timerImg,
         text: text,
-        type: 'spa'
+        type: 'spa',
+        id: 3
     }
 ]
 
@@ -59,17 +64,17 @@ export const Projects = () => {
 
     let filteredWorks = worksData
 
-    if(currentFilterStatus === 'landing') {
-        filteredWorks = worksData.filter(work=> work.type === 'landing')
+    if (currentFilterStatus === 'landing') {
+        filteredWorks = worksData.filter(work => work.type === 'landing')
     }
-    if(currentFilterStatus === 'react') {
-        filteredWorks = worksData.filter(work=> work.type === 'react')
+    if (currentFilterStatus === 'react') {
+        filteredWorks = worksData.filter(work => work.type === 'react')
     }
-    if(currentFilterStatus === 'spa') {
-        filteredWorks = worksData.filter(work=> work.type === 'spa')
+    if (currentFilterStatus === 'spa') {
+        filteredWorks = worksData.filter(work => work.type === 'spa')
     }
 
-    function changeFilterStatus  (value: TabsItemsType )  {
+    function changeFilterStatus(value: TabsItemsType) {
         setCurrentFilterStatus(value)
     }
 
@@ -78,15 +83,33 @@ export const Projects = () => {
         <StyledWorks id={'projects'}>
             <MyContainer>
                 <SectionsTitle>My Works</SectionsTitle>
-                <TabMenu currentFilterStatus={currentFilterStatus}  tabsItems={tabsItems} changeFilterStatus={changeFilterStatus}/>
-                <FlexWrapper justify={'space-around'} align={'flex-start'} wrap={'wrap'}>
-                    {filteredWorks.map((w)=>{
-                        return <Project title={w.title} text={w.text} src={w.src} />
-                    })}
+                <TabMenu currentFilterStatus={currentFilterStatus} tabsItems={tabsItems}
+                         changeFilterStatus={changeFilterStatus}/>
+                <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
+                        <AnimatePresence>
+                            {filteredWorks.map((w) => {
+                                return (
+                                    <motion.div
+                                        style={{width: '400px', flexGrow: '1', maxWidth: '540px'}}
+                                        layout
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        key={w.id}
+                                    >
+                                        <Project
+                                            title={w.title}
+                                            text={w.text}
+                                            src={w.src}
+                                            key={w.id}
+                                        />
+                                    </motion.div>
+                                )
+                            })}
+                        </AnimatePresence>
                 </FlexWrapper>
             </MyContainer>
         </StyledWorks>
-
     );
 };
 
@@ -95,8 +118,9 @@ const StyledWorks = styled.section`
   position: relative;
   min-height: 100vh;
   background-color: darkblue;
+
   ${FlexWrapper} {
     gap: 30px;
   }
-  
+
 `

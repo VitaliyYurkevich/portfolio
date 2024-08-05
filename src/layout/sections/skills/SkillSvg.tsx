@@ -37,7 +37,7 @@ type SkillPngPropsType = {
 export const SkillPng = (props: SkillPngPropsType) => {
     return (
         <StyledSkill>
-            <FlexWrapper direction={'column'} align={'center'} >
+            <FlexWrapper  direction={'column'} align={'center'} >
                 <IconWrapper>
                     <StyledImage src={props.src} height={props.height} width={props.width} />
                     <StyledText>{props.text}</StyledText>
@@ -57,16 +57,6 @@ margin-top: 10px;
 `
 
 const StyledSkill = styled.div`
- // width: 20%;
- // text-align: center;
-  
-  
- // background-color: lawngreen;
-  
-  
-  
- // padding: 20px;
- // flex-grow: 3;
   align-items: center;
   border: 2px solid #0F1624;
   border-radius: 15px;
@@ -81,6 +71,7 @@ const StyledSkill = styled.div`
   
   @media ${theme.media.tablet} {
     //padding: 0
+    width: 60px;
   }
 `
 

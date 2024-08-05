@@ -17,6 +17,8 @@ import ReduxIcon from '../../../assets/images/alternativeImgPng/reduxIcon.png'
 import RestIcon from '../../../assets/images/alternativeImgPng/RestIcon.png'
 import Sass from '../../../assets/images/alternativeImgPng/SASS.png'
 import TS from '../../../assets/images/alternativeImgPng/Typescript_logo_2020.svg.png'
+import {AttentionSeeker, Fade} from "react-awesome-reveal";
+import {theme} from "../../../styles/Theme";
 
 
 
@@ -44,20 +46,12 @@ export const Skills = () => {
             <MyContainer >
                 <SectionsTitle>My Skills</SectionsTitle>
                 <FlexWrapper wrap={'wrap'} justify={'center'} direction={'row'} align={'normal'} >
-                    {/*<Skill iconId={'vscode'}/>
-                    <Skill iconId={'js'} />
-                    <Skill iconId={'ts'} height={'108'} viewBox={"0 0 108 112"} width={"112"} />
-                    <Skill iconId={'html'} />
-                    <Skill iconId={'css'}/>
-                    <Skill iconId={'redux'} />
-                    <Skill iconId={'react'} />
-                    <Skill iconId={'git'} />
-                    <Skill iconId={'styledComponents'} />
-                    <Skill iconId={'github'} />*/}
-                    {skillPng.map((s)=>{
-                        return <SkillPng src={s.src} text={s.title} width={s.width} height={s.height} />
-                    })}
+                    <Fade direction={"up"}  cascade={true} damping={.1} >
+                        {skillPng.map((s)=>{
+                            return <SkillPng src={s.src} text={s.title} width={s.width} height={s.height} />
+                        })}
                     <SkillSvg iconId={'styledComponents'} text={'Styled Components'} height={'60'} width={'60'} />
+                    </Fade>
                 </FlexWrapper>
             </MyContainer>
         </StyledSkills>
@@ -73,5 +67,9 @@ const StyledSkills = styled.section`
   height: max-content;
   justify-content: center;
   padding-bottom: 20px;
+  
+  @media ${theme.media.mobile} {
+    justify-content: space-between;
+  }
   
 `

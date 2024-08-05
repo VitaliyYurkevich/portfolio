@@ -11,11 +11,16 @@ export const HeaderIcons = () => {
 
     return (
         <StyledHeaderIcons>
-
             <FlexWrapper wrap={'nowrap'} justify={'space-between'} >
-                <HeaderIcon iconId={'githubHeader'} width={'32'} height={'32'} viewBox={"0 0 32 32"}/>
-                <HeaderIcon iconId={'linkedinHeader'} width={'32'} height={'32'} viewBox={"0 0 32 32"}/>
-                <HeaderIcon iconId={'telegramHeader'} width={'35'} height={'30'} viewBox={'0 0 35 30'}/>
+                <a href={'https://github.com/VitaliyYurkevich'} >
+                    <HeaderIcon iconId={'githubHeader'} width={'32'} height={'32'} viewBox={"0 0 32 32"}/>
+                </a>
+                <a href={''} >
+                    <HeaderIcon iconId={'linkedinHeader'} width={'32'} height={'32'} viewBox={"0 0 32 32"}/>
+                </a>
+                <a href={'https://t.me/vittelit'} >
+                    <HeaderIcon iconId={'telegramHeader'} width={'35'} height={'30'} viewBox={'0 0 35 30'}/>
+                </a>
             </FlexWrapper>
         </StyledHeaderIcons>
     );
@@ -32,6 +37,10 @@ const StyledHeaderIcons = styled.div`
     padding-right: 33%;
     padding-left: 5%;
   }
-
+ a {
+   width: 32px;
+   //padding-right: 50px;
+   margin-right: 30px;
+ }
   display: flex;
 `
