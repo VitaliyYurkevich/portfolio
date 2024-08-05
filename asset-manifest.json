@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.31d6cfe0.css",
-    "main.js": "/portfolio/static/js/main.3d63fc12.js",
+    "main.js": "/portfolio/static/js/main.f54a1d25.js",
     "static/js/787.25eaef86.chunk.js": "/portfolio/static/js/787.25eaef86.chunk.js",
     "static/media/reduxIcon.png": "/portfolio/static/media/reduxIcon.1b4bb5fceb01b19da59d.png",
     "static/media/material-ui-icon-2048x1626-on580ia9.png": "/portfolio/static/media/material-ui-icon-2048x1626-on580ia9.ec9a2464156a595cae04.png",
@@ -18,11 +18,11 @@
     "static/media/RestIcon.png": "/portfolio/static/media/RestIcon.fb931df4b41f84fd4ae2.png",
     "static/media/Formik.png": "/portfolio/static/media/Formik.95443f3a820d21784c67.png",
     "index.html": "/portfolio/index.html",
-    "main.3d63fc12.js.map": "/portfolio/static/js/main.3d63fc12.js.map",
+    "main.f54a1d25.js.map": "/portfolio/static/js/main.f54a1d25.js.map",
     "787.25eaef86.chunk.js.map": "/portfolio/static/js/787.25eaef86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.3d63fc12.js"
+    "static/js/main.f54a1d25.js"
   ]
 }
