@@ -161,7 +161,7 @@ const Mask = styled.span`
   left: 0;
   display: inline-block;
   height: 50%;
-  overflow-y: hidden;
+  //overflow-y: hidden;
   color: ${theme.colors.white};
   transition: ${theme.animation.transition} ;
 
@@ -190,7 +190,7 @@ const NavLink = styled(Link)`
     background-color: ${theme.colors.accent};
 
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: -8px;
     right: -8px;
     z-index: 1;
@@ -205,11 +205,13 @@ const NavLink = styled(Link)`
     }
     
     ${Mask} {
-      transform: skewX(12deg) translateX(5px);
-      color: ${theme.colors.grey};
+      //transform: skewX(12deg) translateX(5px);
+     // color: ${theme.colors.grey};
+      color: ${theme.colors.white};
+      text-shadow: aqua 1px 0 4px, aqua 2px 0 8px, aqua 3px 0 16px, aqua 4px 0 20px  ;
 
       & + ${Mask} {
-        transform: skewX(12deg) translateX(-5px);
+        //transform: skewX(12deg) translateX(-5px);
       }
     }
   }

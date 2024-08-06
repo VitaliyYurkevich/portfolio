@@ -89,6 +89,7 @@ const NavLink = styled(Link)`
   font-style: normal;
   font-weight: 500;
   color: transparent;
+  
 
   &::before {
     content: '';
@@ -115,10 +116,13 @@ const NavLink = styled(Link)`
 
     ${Mask} {
      // transform: skewX(12deg) translateX(5px);
-      color: ${theme.colors.grey};
+     
+     color: ${theme.colors.white};
+     text-shadow: aqua 0 0 4px, aqua 0 0 8px, aqua 0 0 16px, aqua 0 0 20px  ;
+      
 
       & + ${Mask} {
-        transform: skewX(12deg) translateX(-5px);
+        //transform: skewX(12deg) translateX(-5px);
       }
     }
   }
