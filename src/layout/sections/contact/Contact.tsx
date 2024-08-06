@@ -50,7 +50,6 @@ export const Contact = () => {
                         <Field placeholder={'email'} name={'subject'}/>
                         <StyledTitle>Message</StyledTitle>
                         <Field placeholder={'message'} name={'message'} as={'textarea'}/>
-
                     </FieldWrapper>
                     <Fade direction={"right"} damping={.1}>
                         <Button type={'submit'}>Send message</Button>

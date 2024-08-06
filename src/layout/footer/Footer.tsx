@@ -34,7 +34,7 @@ export const Footer = () => {
                     })}
                     </Fade>
                 </SocialList>
-                <Copyright>© 2023 Vitaliy Yurkevich, All Rights Reserved.</Copyright>
+                <Copyright>© 2024 Vitaliy Yurkevich, All Rights Reserved.</Copyright>
             </FlexWrapper>
         </StyledFooter>
     );
