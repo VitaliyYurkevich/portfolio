@@ -1,4 +1,4 @@
-import React, {ElementRef, useRef} from 'react';
+import React, {ElementRef, useRef, useState} from 'react';
 import styled from "styled-components";
 import {SectionsTitle} from "../../../components/SectionsTitle";
 import {Button} from "../../../components/Button";
@@ -9,15 +9,16 @@ import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
 
+    const [disable, setDisable] = useState(false)
+
+
     const form = useRef<ElementRef<'form'>>(null);
+
 
     const sendEmail = (e: any) => {
         e.preventDefault();
-        debugger
-
 
         if (!form.current) {
-
             return
         }
 
@@ -27,14 +28,15 @@ export const Contact = () => {
             })
             .then(
                 () => {
-
+                    setDisable(true)
                     console.log('SUCCESS!');
                 },
                 (error) => {
-
+                    setDisable(true)
                     console.log('FAILED...', error.text);
                 },
             );
+        e.target.reset()
     };
 
 
@@ -45,14 +47,15 @@ export const Contact = () => {
                 <StyledForm ref={form} onSubmit={sendEmail}>
                     <FieldWrapper>
                         <StyledTitle>Name</StyledTitle>
-                        <Field placeholder={'name'} name={'name'}/>
+                        <Field required placeholder={'name'} name={'name'}/>
                         <StyledTitle>Email</StyledTitle>
-                        <Field placeholder={'email'} name={'subject'}/>
+                        <Field required placeholder={'email'} name={'subject'}/>
                         <StyledTitle>Message</StyledTitle>
-                        <Field placeholder={'message'} name={'message'} as={'textarea'}/>
+                        <Field required placeholder={'message'} name={'message'} as={'textarea'}/>
                     </FieldWrapper>
                     <Fade direction={"right"} damping={.1}>
-                        <Button type={'submit'}>Send message</Button>
+                        <Button disable={disable} disabled={disable}
+                                type={'submit'}>{disable ? "Message sent, thank you" : 'Send message'}</Button>
                     </Fade>
                 </StyledForm>
             </MyContainer>

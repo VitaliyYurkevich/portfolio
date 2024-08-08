@@ -89,7 +89,7 @@ const NavLink = styled(Link)`
   font-style: normal;
   font-weight: 500;
   color: transparent;
-  
+
 
   &::before {
     content: '';
@@ -104,22 +104,22 @@ const NavLink = styled(Link)`
     z-index: 1;
 
     transform: scale(0);
-    transition: ${theme.animation.transition} ;
+    transition: ${theme.animation.transition};
   }
 
   &:hover, &.active {
     &::before {
-      
       transform: scale(1);
+      transition: .4s ease-in-out;
     }
 
 
     ${Mask} {
-     // transform: skewX(12deg) translateX(5px);
-     
-     color: ${theme.colors.white};
-     text-shadow: aqua 0 0 4px, aqua 0 0 8px, aqua 0 0 16px, aqua 0 0 20px  ;
-      
+      // transform: skewX(12deg) translateX(5px);
+
+      color: ${theme.colors.white};
+      text-shadow: aqua 0 0 4px, aqua 0 0 8px, aqua 0 0 16px, aqua 0 0 20px;
+      transition: .2s ease-in-out;
 
       & + ${Mask} {
         //transform: skewX(12deg) translateX(-5px);

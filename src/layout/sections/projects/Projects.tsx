@@ -7,7 +7,6 @@ import {Project} from "./project/Project";
 import socialImg from './../../../assets/images/proj-1.png'
 import timerImg from './../../../assets/images/proj-2.png'
 import {MyContainer} from "../../../components/MyContainer";
-import {Fade} from "react-awesome-reveal";
 import {AnimatePresence, motion} from "framer-motion";
 
 export type TabsItemsType = 'all' | 'landing' | 'react' | 'spa'

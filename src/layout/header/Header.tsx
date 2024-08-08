@@ -27,7 +27,7 @@ export const Header = () => {
     return (
         <StyledHeader>
             <MyContainer>
-                <FlexWrapper justify={'space-between'} align={'center'}>
+                <FlexWrapper justify={'space-around'} align={'center'}>
                     <Logo/>
                     <HeaderMenu item={items}/>
                     <MobileMenu item={items}/>
@@ -48,13 +48,13 @@ export const StyledHeader = styled.header`
   right: 0;
   z-index: 99999;
   //min-height: 100px;
-
+  //outline: 1px solid red;
 `
 
 export const WrapperIcon = styled.div`
 
 
   @media ${theme.media.mobile} {
-
+    
   }
 `

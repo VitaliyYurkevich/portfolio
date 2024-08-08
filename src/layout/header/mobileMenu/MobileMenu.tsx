@@ -202,6 +202,7 @@ const NavLink = styled(Link)`
   &:hover, &.active {
     &::before {
       transform: scale(1);
+      transition: .4s ease-in-out;
     }
     
     ${Mask} {
@@ -209,7 +210,7 @@ const NavLink = styled(Link)`
      // color: ${theme.colors.grey};
       color: ${theme.colors.white};
       text-shadow: aqua 1px 0 4px, aqua 2px 0 8px, aqua 3px 0 16px, aqua 4px 0 20px  ;
-
+      transition: .2s ease-in-out;
       & + ${Mask} {
         //transform: skewX(12deg) translateX(-5px);
       }

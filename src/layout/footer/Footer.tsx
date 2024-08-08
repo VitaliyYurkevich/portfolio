@@ -23,15 +23,26 @@ export const Footer = () => {
                 </Fade>
                 <SocialList>
                     <Fade direction={"up"} cascade={true} damping={.1}>
-                    {iconArray.map((i) => {
-                        return (
                             <SocialItem>
-                                <SocialIconLink>
-                                    <IconSvg height={i.height} width={i.width} viewBox={i.viewBox} iconId={i.iconId}/>
+                                <SocialIconLink href={'https://www.instagram.com/vitaliy.yurkevich'}>
+                                    <IconSvg height={'17px'}  width={'17px'}  viewBox={'0 0 17px 17px'}  iconId={'instagram'} />
                                 </SocialIconLink>
                             </SocialItem>
-                        )
-                    })}
+                        <SocialItem>
+                            <SocialIconLink href={'https://t.me/vittelit'}>
+                                <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'telegram'}/>
+                            </SocialIconLink>
+                        </SocialItem>
+                        <SocialItem>
+                            <SocialIconLink href={'https://vk.com/id30542185'}>
+                                <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'vk'}/>
+                            </SocialIconLink>
+                        </SocialItem>
+                        <SocialItem>
+                            <SocialIconLink href={'https://www.linkedin.com/in/vitaliy-yurkevich-073449272/'}>
+                                <IconSvg height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={'linkedin'}/>
+                            </SocialIconLink>
+                        </SocialItem>
                     </Fade>
                 </SocialList>
                 <Copyright>© 2024 Vitaliy Yurkevich, All Rights Reserved.</Copyright>
@@ -63,7 +74,7 @@ const SocialIconLink = styled.a`
   height: 35px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   transition: ${theme.animation.transition};
 

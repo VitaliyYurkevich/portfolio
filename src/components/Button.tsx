@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {theme} from "../styles/Theme";
 
-export const Button = styled.button`
+export const Button = styled.button<{ disable?: boolean }>`
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 1px;
@@ -27,6 +27,13 @@ export const Button = styled.button`
     height: 10px;
     background-color: ${theme.colors.accent};
     background-image: linear-gradient(270deg, #13ADC7 0%, #6978D1 66.67%, #945DD6 100%);
+    ${props => props.disable && css<{ disable?: boolean }>`
+      transition: ${theme.animation.transition};
+      background-image: linear-gradient(270deg, #3f7272 0%, #3f7272 66.67%, #3f7272 100%);
+      width: 100%;
+      height: 100%;
+      border-radius: 83px;
+    `}
     transition: ${theme.animation.transition};
     position: absolute;
     bottom: 0;

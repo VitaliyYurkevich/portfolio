@@ -3,6 +3,7 @@ import styled from "styled-components";
 import iconsSprite from "../../assets/images/icons-sprite.svg";
 import {Link} from "react-scroll";
 import {animateScroll as scroll} from "react-scroll";
+import {theme} from "../../styles/Theme";
 
 
 export const Logo = () => {
@@ -21,7 +22,7 @@ export const Logo = () => {
     ]
 
     return (
-        <StyledDiv>
+
             <StyledA
                 to={'home'}
 
@@ -44,7 +45,7 @@ export const Logo = () => {
                     )
                 })}
             </StyledA>
-        </StyledDiv>
+
     );
 };
 //xmlns={"http://www.w3.org/2000/svg"
