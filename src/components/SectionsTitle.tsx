@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {font} from "../styles/Common";
+import {theme} from "../styles/Theme";
 
 export const SectionsTitle = styled.h2`
  // color: #42446E;
@@ -25,6 +26,10 @@ export const SectionsTitle = styled.h2`
     left: 50%;
     bottom: -220px;
     transform: translateX(-50%);
+    
+    @media ${theme.media.mobile} {
+      bottom: -250px;
+    }
     
   }
   

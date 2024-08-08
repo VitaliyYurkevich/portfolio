@@ -24,6 +24,7 @@ export const HeaderMenu = (props: MenuPropsType) => {
                                      spy={true}
                                      smooth={true}
                                      activeClass="active"
+                                     offset={-150}
                                 >
                                 {item.title}
                                 <Mask>

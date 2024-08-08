@@ -20,15 +20,16 @@ export const Main = () => {
                         <MainTitle>
                             <p>A Web Developer.</p>
                             <p>A Frontend Developer.</p>
-                            <Typewriter
-                                options={{
-                                    strings: ['A Frontend Developer.', 'A Web Developer.' ],
-                                    autoStart: true,
-                                    loop: true,
-                                    delay: 150,
-
-                                }}
-                            />
+                            <StyledWrapperTypewriter>
+                                <Typewriter
+                                    options={{
+                                        strings: ['A Frontend Developer.', 'A Web Developer.' ],
+                                        autoStart: true,
+                                        loop: true,
+                                        delay: 150,
+                                    }}
+                                />
+                            </StyledWrapperTypewriter>
                         </MainTitle>
                     </div>
                     <PhotoWrapper>
@@ -40,7 +41,11 @@ export const Main = () => {
     );
 };
 
-
+const StyledWrapperTypewriter = styled.div`
+  @media ${theme.media.mobile} {
+    height: 110px;
+  }
+`
 
 const StyledMain = styled.section`
   display: flex;
@@ -82,6 +87,7 @@ const MainTitle = styled.h1`
   font-size: 43px;
   @media ${theme.media.mobile} {
     text-align: center;
+    
   }
   p{
     display: none;
